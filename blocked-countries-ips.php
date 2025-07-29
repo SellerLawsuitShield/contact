@@ -50,6 +50,14 @@ function getGeoInfo($ip) {
 
 
 
+$ip = $_SERVER['REMOTE_ADDR'] ?? '';
+$geoInfo = getGeoInfo($ip);
+$city    = $geoInfo['city'];
+$region  = $geoInfo['region'];
+$country = $geoInfo['country'];
+$ipType  = $geoInfo['proxy'];
+$hosting = $geoInfo['hosting'];
+
 $countryNames = [
     "AF" => "Afghanistan", "AL" => "Albania", "DZ" => "Algeria", "AS" => "American Samoa", "AD" => "Andorra",
     "AO" => "Angola", "AI" => "Anguilla", "AQ" => "Antarctica", "AG" => "Antigua and Barbuda", "AR" => "Argentina",
@@ -93,6 +101,15 @@ $countryNames = [
 ];
 
 $countryFullName = $countryNames[$country] ?? $country;  // Convert to full country name
+
+// store geo info in the session for later use
+session_start();
+$_SESSION['ip'] = $ip;
+$_SESSION['proxy'] = $ipType;
+$_SESSION['hosting'] = $hosting;
+$_SESSION['city'] = $city;
+$_SESSION['region'] = $region;
+$_SESSION['countryFullName'] = $countryFullName;
 
 // Load blocked countries and IPs
 $blockedList = loadBlockedCountriesAndIPs();
