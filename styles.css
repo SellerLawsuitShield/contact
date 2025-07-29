@@ -1,0 +1,1577 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Header styling */
+header {
+    background: #222;
+    color: white;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* <-- Center everything */
+    padding: 0 20px;
+    height: 100px;
+    position: relative;
+}
+
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  header {
+    height: auto; /* Allow height to adjust for smaller screens */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Ensure text is centered */
+    padding: 10px; /* Add spacing for smaller screens */
+  }
+
+  header img {
+    max-height: 100px; /* Smaller max height for logos */
+  }
+
+  header span {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+    margin: 10px 0; /* Add spacing around the text */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: auto; /* Allow height to adjust for very small screens */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Ensure text is centered */
+    padding: 5px; /* Reduce padding for very small screens */
+  }
+
+  header img {
+    max-height: 80px; /* Smaller max height for logos */
+  }
+
+  header span {
+    font-size: 2rem; /* Smaller font size for very small screens */
+  }
+}
+
+/* Logo Styling */
+.logo {
+    height: 100px;
+    align: center;
+}
+
+/* Mobile View for Logo */
+@media (max-width: 1024px) {
+    .logo {
+        height: 50px;
+    }
+}
+
+/* Earn Money Styling */
+.earn-money {
+    height: 100px;
+    margin-left: 450px;
+    align-items: center;
+}
+
+/* Mobile View for Logo */
+@media (max-width: 1024px) {
+    .earn-money {
+        height: 80px;
+        padding-top: 30px;
+        margin-left: 0px;
+    }
+}
+
+/* Outer container to control max width */
+.nav-wrapper {
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.nav-tabs li {
+    margin: 0.5rem 1rem;
+    flex: 0 0 auto;
+}
+
+.nav-tabs a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-tabs a:hover {
+    text-decoration: underline;
+    color: #fce058;
+}
+
+/* Dropdown menu styling */
+.dropdown .dropbtn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000; /* Black background */
+    min-width: 300px; /* Widen dropdown menu */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    margin: 0;
+    list-style: none;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: #fce058; /* Hover color for dropdown items */
+    text-decoration: underline;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile: stack and center tabs */
+@media (max-width: 1024px) {
+    .nav-tabs {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        margin: 0px 0;         /* simple vertical spacing */
+    }
+    .nav-tabs li {
+        margin: 0.5rem 0;       /* separate each link vertically */
+    }
+    .nav-tabs a,
+    .dropdown .dropbtn {
+        font-size: 1rem;        /* a bit smaller for mobile */
+    }
+    /* ensure dropdowns expand full-width on mobile */
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+    .dropdown-content a {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* Attention Banner */
+.attention-banner {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.attention-banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Info Box Styling */
+.info-box {
+    background: #eaf2fa;
+    border: 1px solid #d0d7df;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Red Banner Styling */
+.red-banner img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Additional Image Styling */
+.additional-image img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Video container styling */
+.video-container {
+    width: 800px; /* Default width for larger screens */
+    height: 450px; /* Default height for larger screens */
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive image styling */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Center the image */
+}
+
+/* Center the "Demonstration Video:" text */
+.demo-video .center-text {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem; /* Optional: Adjust font size */
+}
+
+/* Products section */
+.products {
+    display: flex;
+    justify-content: space-between; /* Space evenly between products */
+    gap: 0.3rem; /* Reduce spacing */
+    max-width: 80%; /* Match the text box width */
+    margin: 0 auto; /* Center the products section */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+/* Product Card Styling */
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    word-break: break-word; /* Ensure normal line breaks */
+    overflow-wrap: break-word; /* Allow breaking at word boundaries */
+    overflow: hidden; /* Prevent text from spilling out */
+    text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+    margin-bottom: auto; /* Allows dynamic height adjustment */
+}
+
+
+.product-description:hover {
+    color: green;
+}
+
+/* Price Styling */
+.price {
+    font-size: 1.6rem;
+    color: red;
+    margin-bottom: 0.5rem; /* Space between price and button */
+}
+
+/* Centered page title styling */
+.centered-title {
+    text-align: center;
+    text-decoration: underline;
+    margin: 20px 0;
+}
+
+/* Text content container */
+.content-container {
+    max-width: 1300px; /* Limit maximum width on larger screens */
+    width: 90%; /* Use 90% of the screen width for smaller devices */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+    margin: 0;
+}
+
+main {
+    flex: 1; /* Pushes the footer down if there's not enough content */
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0; /* Adjusts spacing between lines */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #fce058;
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .video-container {
+        width: 90%; /* 90% of the screen width */
+        height: auto; /* Automatically adjust height */
+        padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Stretch to fit the container */
+        height: 100%;
+    }
+
+ /* Products Section */
+.products {
+	margin-top: 150px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.product {
+	width: 30%; /* Adjust width for better layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+	background: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.product .price {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: darkgreen;
+}
+
+.product .add-to-cart-btn {
+    margin-top: 10px;
+}
+    .nav-tabs {
+        flex-direction: column; /* Stack tabs for smaller screens */
+    }
+
+    .nav-tabs li {
+        margin: 0.5rem 0;
+    }
+
+}
+/* Video image styling for the index page */
+.video-image-index {
+    width: 100%; /* Fully fills the container's width */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: 0 auto; /* Centers the image */
+}
+
+/* Video image styling for How it Works page */
+.video-image-how-it-works {
+    max-width: 900px; /* Increased by 100px */
+    width: 90%; /* Responsive width for smaller devices */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Center the image */
+}
+
+/* Text content container for How it Works page */
+.content-container-how-it-works {
+    max-width: 900px; /* Matches the updated video width */
+    width: 90%; /* Responsive width for smaller devices */
+    margin: 0 auto; /* Center the content horizontally */
+    text-align: left; /* Ensure text is aligned to the left */
+}
+/* Recommended Section Styling */
+.recommended-section {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.recommended-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.recommended-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.recommended-list li {
+    font-size: 1.2rem;
+    color: #333;
+}
+/* Country List Styling */
+.country-list-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.country-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+    gap: 15px; /* Space between items */
+    max-width: 90%; /* Restrict width to prevent overflow */
+    margin: 0 auto; /* Center the grid */
+    font-size: 18px; /* Font size as requested */
+}
+
+.country-list div {
+    display: flex;
+    align-items: center;
+    text-align: left;
+	padding-left: 80px;
+}
+
+/* Add slight padding for better alignment */
+.country-list div:before {
+    content: '↪'; /* Add arrow before each country */
+    margin-right: 8px; /* Space between arrow and text */
+    color: #333; /* Arrow color matches the text */
+}
+/* Country List Title Styling */
+.country-list-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white; /* White text */
+    background-color: #007BFF; /* Blue background */
+    padding: 10px 0; /* Add padding around the text */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    width: 50%; /* Center the title with a restricted width */
+    margin: 0 auto 20px auto; /* Center horizontally and add spacing below */
+}
+/* Banner Styling */
+.banner-container {
+    text-align: center;
+    margin: 20px 0; /* Add space above and below the banner */
+}
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+/* FAQ Section Styling */
+.faq-section {
+    margin: 20px 0;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-header {
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    text-align: left;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-header:hover {
+    background-color: #eaf2fa;
+}
+
+.faq-header.active {
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.faq-content {
+    padding: 20px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    line-height: 1.5;
+}
+
+/* Add padding to the FAQ section container */
+.content-container-FAQs {
+    margin: 0 auto;
+    max-width: 800px;
+}
+/* Testimonials Page Styling */
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 45%; /* Two testimonials per row */
+    min-width: 300px;
+    flex: 1 1 calc(50% - 20px); /* Adjust for spacing */
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.testimonial p {
+    margin-bottom: 10px;
+}
+
+.centered-title {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.executive-comments-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem; /* Space between the two boxes */
+    max-width: 80%; /* Align with testimonial layout width */
+    margin: 20px auto; /* Center and add spacing */
+    flex-wrap: wrap; /* Ensure responsiveness on smaller screens */
+}
+
+.executive-comment {
+    flex: 1 1 calc(50% - 1.5rem); /* Ensure two boxes fit side by side */
+    background-color: #f5f7ff; /* Light blue background for distinction */
+    border: 1px solid #ccd5ff; /* Slightly darker border for subtle styling */
+    border-radius: 10px; /* Smooth corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    font-size: 1rem; /* Standardize font size with testimonials */
+}
+
+.executive-comment p {
+    margin: 0.5rem 0;
+    line-height: 1.6; /* Improve readability */
+}
+
+.executive-comment p strong {
+    font-size: 1.2rem; /* Slightly larger font for emphasis */
+    color: #003366; /* Dark blue color for headings */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .executive-comments-container {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center;
+    }
+
+    .executive-comment {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+.testimonials-preview {
+    background-color: #f9f9f9; /* Light background for distinction */
+    padding: 40px 20px; /* Add spacing around the section */
+    text-align: center;
+}
+
+.testimonials-preview h1 {
+    font-size: 2.5rem; /* Heading 1 format */
+    margin-bottom: 20px;
+    color: #222; /* Dark color for contrast */
+}
+
+.testimonials-preview .testimonial {
+    background-color: #ffffff; /* White background for testimonial boxes */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left within the box */
+}
+
+.testimonials-preview .testimonial p {
+    margin: 0.5rem 0;
+    line-height: 1.6; /* Improve readability */
+    font-size: 1rem; /* Standardize font size */
+}
+
+.testimonials-preview h3 {
+    margin-top: 30px;
+    font-size: 1.5rem; /* Slightly smaller heading */
+}
+
+.testimonials-preview h3 a {
+    color: #003366; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.testimonials-preview h3 a:hover {
+    color: #fce058; /* Hover color for the link */
+    text-decoration: underline;
+}
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.name-fields {
+    display: flex;
+    gap: 1rem;
+}
+
+.name-fields input {
+    flex: 1;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-button {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #2563eb; /* Darker blue */
+}
+
+#response-message {
+    display: none;
+    margin-top: 1rem;
+    padding: 15px;
+    border-radius: 4px;
+    background: #bbf7d0; /* Green */
+    color: #065f46; /* Darker green */
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+.success-message {
+    background-color: #007BFF; /* Blue background */
+    color: #FFFFFF; /* White text */
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+/* Add-to-Cart Button */
+.add-to-cart-btn {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #005f73;
+    transform: scale(1.05);
+}
+/* Price and Button Alignment */
+.price-and-button {
+    display: left;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-top: 1rem; /* Add space above */
+}
+/* Responsive Styling for Mobile Devices */
+@media (max-width: 1024px) {
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        max-width: 90%; /* Adjust product size for smaller screens */
+    }
+}
+
+/* Cart Container (in header flex row) */
+.cart-container {
+    display: flex;
+    align-items: center;
+    order: 4;              /* logo(1), nav(2), translate(3), then cart */
+    margin-left: 1rem;     /* space from the item to its left */
+    cursor: pointer;
+    position: relative;
+    pointer-events: auto;
+}
+
+/* Shopping Cart Icon */
+.cart-container i.fa-shopping-cart {
+    font-size: 1.5rem;     /* ~24px */
+    color: white;
+    margin: 0;             /* we handle spacing via the badge */
+}
+
+/* Cart Count Badge */
+.cart-container .cart-count {
+    margin-left: 0.25rem;  /* small gap */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+    line-height: 1;
+    position: absolute;
+    top: -6px;             /* lift badge slightly above icon */
+    right: -8px;           /* tuck it near the corner */
+}
+
+/* Mobile adjustments */
+@media (max-width: 1024px) {
+    .cart-container {
+        order: 3;          /* logo(1), nav(2), then cart (before translate) */
+        width: 100%;
+        justify-content: right;
+        margin: 10px 0;    /* vertical spacing */
+    }
+    .cart-container i.fa-shopping-cart {
+        font-size: 1.25rem; /* slightly smaller on phones */
+    }
+    .cart-container .cart-count {
+        padding: 2px 5px;
+        font-size: 0.8rem;
+        top: -4px;
+        right: -6px;
+    }
+}
+
+
+/* Translate Container (in your header flex row) */
+.translate-container {
+    display: flex;
+    align-items: center;
+    order: 3;             /* position after logo (order:1) and nav (order:2) */
+    margin-left: auto;    /* push it to the far right */
+    position: relative;   /* no absolute needed */
+    pointer-events: auto; /* allow clicks */
+}
+
+/* The actual widget wrapper */
+.translate-widget {
+    display: inline-block;
+    margin: 0 1rem 0 0;   /* space between widget and whatever’s right of it */
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile tweaks */
+@media (max-width: 1024px) {
+    .translate-container {
+        order: 4;           /* drop below logo(1), nav(2), cart(3) */
+        width: 100%;
+        transform: scale(0.60);
+        justify-content: center;
+        margin: -200px 0;     /* give it breathing room */
+    }
+    .translate-widget {
+        margin: 0;         /* flush-center on mobile */
+    }
+}
+
+
+.cart-container {
+    position: absolute;
+    top: 50%; /* Center vertically in the header */
+    right: 20px; /* Align to the right edge */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.cart-link {
+    text-decoration: none;
+    color: white; /* Cart icon color */
+    font-size: 1.5rem; /* Size of the cart icon */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 0.9rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+}
+.cart-link:hover {
+    color: #fce058; /* Highlight color on hover */
+}
+/* Cart Section Styling */
+.cart-section {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.cart-items-container {
+  width: 60%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  flex: 3;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    max-height: 100px;
+    margin-right: 20px;
+}
+
+.cart-item-details {
+    flex: 2;
+}
+
+.cart-item-price {
+    font-size: 1.2rem;
+    color: #007BFF;
+    margin-top: 10px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+
+.quantity-btn:hover {
+    background-color: #0056b3;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.remove-item-btn {
+    background-color: #FF4D4D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.remove-item-btn:hover {
+    background-color: #CC0000;
+}
+
+.coupon-section, .cart-summary {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: visible;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-summary h2 {
+    margin-bottom: 20px;
+}
+
+.cart-summary-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkout-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+.discount-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f7ff;
+    border: 1px solid #ccd5ff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+.discount-info strong {
+    font-size: 1.2rem;
+    color: #003366;
+}
+.quantity-adjuster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.product-container {
+		    margin-top: 150px; /* Adjust this value based on the header height */
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .product-container img {
+            max-width: 350px;
+            height: auto;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .product-details .price {
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .product-details .quantity-adjuster {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+     .related-products-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.related-product {
+    flex: 1;
+    text-align: center;
+}
+
+.related-product img {
+    max-width: 50%; /* Makes the image about 1/3 of its original size */
+    height: auto;
+}
+
+
+        .quantity-discount-notification {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #333;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+		.buy-now-container {
+        text-align: center;
+        margin: 40px 0; /* Adds padding above and below the button */
+    }
+
+    .buy-now-container img {
+        max-width: 200px; /* Adjust the size of the button */
+        height: auto;
+        cursor: pointer;
+    }
+	/* We have shipped to page container */
+.content-container-we-have-shipped-to {
+	display: grid;
+  place-items: center;
+	max-width: 1300px; /* Limit maximum width on larger screens */
+    width: 90%; /* Use 90% of the screen width for smaller devices */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Coupon Section Styles */
+.coupon-section {
+    margin-bottom: 20px; /* Add some spacing below the coupon section */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.coupon-section input {
+    padding: 10px;
+    width: 60%;
+    max-width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.coupon-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.coupon-section button:hover {
+    background-color: #0056b3;
+}
+.checkout-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkout-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.checkout-btn {
+    padding: 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+#order-summary {
+    margin-bottom: 20px;
+}
+
+#shipping-options-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.shipping-option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px; /* Space between radio button and label */
+    width: 100%;
+    margin-bottom: 12px; /* ✅ Adds spacing between options */
+}
+
+/* Optional: Remove margin from the last option to prevent extra space */
+.shipping-option:last-child {
+    margin-bottom: 0;
+}
+
+
+.shipping-option input[type="radio"] {
+    margin: 0;
+    padding: 0;
+    transform: scale(1.2);
+    flex-shrink: 0;
+    width: 16px; /* ✅ Reduce width of the radio button container */
+	margin-left: -30px;     /* Remove browser default left margin */
+    margin-right: 8px;  /* Add spacing between radio button and label */
+}
+
+
+.shipping-option {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;  /* ✅ Moves everything a bit to the left */
+    padding-right: 16px; /* Optional: Add right padding too */
+}
+
+
+
+/* Force removal of any browser-specific spacing */
+input[type="radio"], label {
+    vertical-align: middle;
+}
+
+
+/* Mobile Responsive: Allow wrapping on smaller screens */
+@media (max-width: 600px) {
+    .shipping-option {
+        flex-wrap: wrap;
+    }
+    
+    .shipping-option label {
+        white-space: normal; /* Allow wrapping on smaller screens */
+    }
+}
+
+/* ✅ Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dim background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ✅ Modal Box */
+.modal-content {
+    background: white;
+    width: 90%; /* Makes it responsive */
+    max-width: 600px; /* Prevents it from getting too large */
+    max-height: 80vh; /* Prevents it from overflowing */
+    overflow-y: auto; /* Enables scrolling inside the modal */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.terms-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Ensure the modal is hidden by default */
+#terms-modal {
+    display: none; /* ✅ Hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Dark overlay when modal is active */
+#terms-modal.active {
+    display: block; /* ✅ Make visible when active */
+}
+
+/* ✅ Close Button (Always Visible) */
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+#close-modal:hover {
+    color: red;
+}
+
+.terms-and-conditions {
+    display: flex;
+    justify-content: flex-start; /* Aligns the checkbox and label to the left */
+    margin-bottom: 15px; /* Adds spacing below this section */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Vertically centers the checkbox and label */
+    gap: 5px; /* Adds a small gap between the checkbox and label */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Ensures no padding affects alignment */
+    transform: scale(1.2); /* Adjusts the size of the checkbox */
+}
+
+.checkbox-container label {
+    margin: 0; /* Removes any default margins */
+    line-height: 1.2; /* Adjusts text line height for better alignment */
+    white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+.terms-and-conditions input[type="checkbox"] {
+    margin: 0; /* Removes any default margins */
+    padding: 0; /* Ensures no padding affects alignment */
+    transform: scale(1.2); /* Optional: Adjusts checkbox size */
+    vertical-align: middle; /* Keeps the checkbox vertically aligned */
+}
+
+.terms-and-conditions label {
+    white-space: nowrap; /* Prevents text wrapping */
+    margin: 0; /* Removes any default margins */
+    padding-left: 5px; /* Adds minimal space between the checkbox and the text */
+    line-height: 1; /* Ensures proper alignment of the text */
+}
+
+.terms-and-conditions a {
+    color: #007bff; /* Optional: Add a link color */
+    text-decoration: none; /* Optional: Remove underline for a cleaner look */
+}
+
+.terms-and-conditions a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #d32f2f;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+	margin-bottom: 30px;
+}
+
+.cta-button:hover {
+    background-color: #b71c1c;
+}
+.shipping-bonus-note {
+    font-size: 0.9em;
+    color: #555;
+    margin-left: 28px;
+    margin-top: 4px;
+}
+.shipping-option-block {
+  margin-top: 10px;
+  padding-right: 16px; /* Add right-side padding */
+}
+
+.shipping-humor {
+  font-size: 0.9em;
+  color: #444;
+  margin-left: 25px; /* aligns with label text */
+  margin-top: 4px;
+}
+.shipping-option label {
+    white-space: nowrap;     /* 🔒 Prevents line breaks */
+    font-weight: bold;       /* Keep bold style if needed */
+}
+/* Optional: highlight status column */
+.status-blocked {
+    color: red;
+    font-weight: bold;
+}
+.status-allowed {
+    color: green;
+    font-weight: bold;
+}
+
+/* Table consistency if not already included */
+#BotLogsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#BotLogsTable th,
+#BotLogsTable td {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+#couponMessage {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* === Affiliate Dashboard Styles === */
+.affiliate-page h1,
+.affiliate-page h2 {
+    text-align: center;
+    color: #333;
+}
+
+.affiliate-page code {
+    background-color: #f1f1f1;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.affiliate-page table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.affiliate-page th,
+.affiliate-page td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.affiliate-page th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.affiliate-page tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.affiliate-page .visit-box {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.coming-soon-container {
+            padding: 100px 20px;
+        }
+
+        .coming-soon-container h1 {
+            font-size: 3rem;
+            color: #d10c0c;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon-container p {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .coming-soon-container h1 {
+                font-size: 2rem;
+            }
+            .coming-soon-container p {
+                font-size: 1.2rem;
+            }
+        }

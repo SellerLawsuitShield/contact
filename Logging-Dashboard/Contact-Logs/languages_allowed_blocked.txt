@@ -1,0 +1,56 @@
+Allowed: Amharic
+Allowed: Arabic
+Allowed: Basque
+Allowed: Bengali
+Allowed: Bulgarian
+Allowed: Catalan
+Allowed: Cherokee
+Blocked: Chinese (PRC)
+Blocked: Chinese (Taiwan)
+Allowed: Croatian
+Allowed: Czech
+Allowed: Danish
+Allowed: Dutch
+Allowed: English (UK)
+Allowed: English (US)
+Allowed: Estonian
+Allowed: Filipino
+Allowed: Finnish
+Allowed: French
+Allowed: German
+Allowed: Greek
+Allowed: Gujarati
+Allowed: Hebrew
+Allowed: Hindi
+Allowed: Hungarian
+Blocked: Icelandic
+Allowed: Indonesian
+Allowed: Italian
+Allowed: Japanese
+Allowed: Kannada
+Allowed: Korean
+Allowed: Latvian
+Allowed: Lithuanian
+Allowed: Malay
+Allowed: Malayalam
+Allowed: Marathi
+Allowed: Norwegian
+Allowed: Polish
+Allowed: Portuguese (Brazil)
+Allowed: Portuguese (Portugal)
+Allowed: Romanian
+Blocked: Russian
+Allowed: Serbian
+Allowed: Slovak
+Allowed: Slovenian
+Allowed: Spanish
+Allowed: Swahili
+Allowed: Swedish
+Allowed: Tamil
+Allowed: Telugu
+Allowed: Thai
+Allowed: Turkish
+Allowed: Ukrainian
+Allowed: Urdu
+Allowed: Vietnamese
+Allowed: Welsh

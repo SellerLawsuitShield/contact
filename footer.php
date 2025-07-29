@@ -1,0 +1,5 @@
+<footer>
+<p>&copy; 2025 Seller Lawsuit Shield</p>
+<p style="text-align: center;"><a href="index.php">Home</a> | <a href="Get-Help-Now.php">Get Help Now</a> | <a href="My-Story.php">My Story</a> | <a href="FAQs.php">FAQs</a> | <a href="Seller-Horror-Stories.php">Seller Horror Stories</a> | <a href="About-SAD-Lawsuits.php">About SAD Lawsuits</a> | <a href="Our-Money-Back-Guarantee.php">Money-Back Guarantee</a></p>
+<p style="text-align: center;"><a href="Lawsuit-Real-Example.php">Lawsuit Real Example</a> | <a href="Testimonials.php">Testimonials</a> | <a href="Blog.php">Blog</a> | <a href="Affiliate-Program.php">Become an Affiliate</a> | <a href="Contact-Us.php">Contact Us</a> | <a href="Terms-and-Conditions.php">Terms and Conditions</a> | <a href="Privacy-Policy.php">Privacy Policy</a></p>
+</footer>
