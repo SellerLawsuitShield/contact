@@ -3,11 +3,29 @@ function logDownloadIfNewIP() {
     session_start();
 
     $ip = $_SESSION['ip'] ?? $_SERVER['REMOTE_ADDR'];
-    $city = $_SESSION['city'] ?? 'Unknown';
-    $region = $_SESSION['region'] ?? 'Unknown';
-    $country = $_SESSION['countryFullName'] ?? 'Unknown';
-    $ipType = $_SESSION['proxy'] ?? 'Unknown';
-    $hostingType = $_SESSION['hosting'] ?? 'Unknown';
+    $city = $_SESSION['city'] ?? null;
+    $region = $_SESSION['region'] ?? null;
+    $country = $_SESSION['countryFullName'] ?? null;
+    $ipType = $_SESSION['proxy'] ?? null;
+    $hostingType = $_SESSION['hosting'] ?? null;
+
+    // Fallback lookup if session data missing
+    if (!$city || !$region || !$country || !$ipType) {
+        $response = @file_get_contents("http://pro.ip-api.com/json/{$ip}?fields=city,regionName,country,proxy,status&key=RNraGZ4ub9516zy");
+        $data = $response ? json_decode($response, true) : null;
+        if ($data && ($data['status'] ?? null) === 'success') {
+            $city = $city ?? ($data['city'] ?? 'Unknown');
+            $region = $region ?? ($data['regionName'] ?? 'Unknown');
+            $country = $country ?? ($data['country'] ?? 'Unknown');
+            $ipType = $ipType ?? ($data['proxy'] ? 'Proxy/VPN' : 'Normal');
+        }
+    }
+
+    $city = $city ?? 'Unknown';
+    $region = $region ?? 'Unknown';
+    $country = $country ?? 'Unknown';
+    $ipType = $ipType ?? 'Unknown';
+    $hosting = isset($geoInfo['hosting']) ? $geoInfo['hosting'] : 'Unknown';
     $date = date("Y-m-d H:i:s"); // current format
     $formattedDate = date("F j, Y g:i A", strtotime($date));
 
@@ -25,7 +43,7 @@ function logDownloadIfNewIP() {
     }
 
     // Log the new IP
-    $logEntry = "$formattedDate | $ip | $ipType | $hostingType | $city | $region | $country" . PHP_EOL;
+    $logEntry = "$formattedDate | $ip | $ipType | $hosting | $city | $region | $country" . PHP_EOL;
     file_put_contents($logFile, $logEntry, FILE_APPEND);
 }
 
