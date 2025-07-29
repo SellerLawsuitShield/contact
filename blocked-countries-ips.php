@@ -13,37 +13,41 @@ function loadBlockedCountriesAndIPs() {
     return $blocklist;
 }
 
-$visitor_ip = $_SERVER['REMOTE_ADDR'];
-$country = "Unknown";
-$region = "Unknown";
-$city = "Unknown";
-$isProxy = "Unknown";
+function getGeoInfo($ip) {
+    $apiKey = 'RNraGZ4ub9516zy'; // Your ip-api.com Pro key
+    $apiUrl = "https://pro.ip-api.com/json/{$ip}?key={$apiKey}&fields=status,message,country,countryCode,city,regionName,proxy,hosting";
 
-// IP-API call (pro tier)
-$ipApiResponse = @file_get_contents("http://pro.ip-api.com/json/{$visitor_ip}?fields=country,regionName,city,proxy,status&key=RNraGZ4ub9516zy");
-session_start();
+    $ipResponse = @file_get_contents($apiUrl);
+    if ($ipResponse !== false) {
+        $geo = json_decode($ipResponse, true);
 
-if ($geoData && $geoData['status'] === 'success') {
-    $country = $geoData['country'] ?? "Unknown";
-    $region = $geoData['regionName'] ?? "Unknown";
-    $city = $geoData['city'] ?? "Unknown";
-    $isProxy = $geoData['proxy'] ? 'Proxy/VPN' : 'Normal';
+        if ($geo['status'] === 'success') {
+            $city = !empty($geo['city']) ? $geo['city'] : 'Unknown';
+            $region = !empty($geo['regionName']) ? $geo['regionName'] : 'Unknown';
+            $country = !empty($geo['country']) ? $geo['country'] : 'Unknown';
+            $proxyType = !empty($geo['proxy']) ? 'Proxy/VPN/Tor' : 'Normal';
+            $hosting = isset($geo['hosting']) ? ($geo['hosting'] ? 'true' : 'false') : 'Unknown';
 
-    // Store in session for access in download-counter.php
-    $_SESSION['countryFullName'] = $country;
-    $_SESSION['region'] = $region;
-    $_SESSION['city'] = $city;
-    $_SESSION['proxy'] = $isProxy;
-    $_SESSION['hosting'] = 'Unknown';
+            return [
+                'city' => $city,
+                'region' => $region,
+                'country' => $country,
+                'proxy' => $proxyType,
+                'hosting' => $hosting
+            ];
+        }
+    }
+
+    // If something goes wrong, return all Unknowns
+    return [
+        'city' => 'Unknown',
+        'region' => 'Unknown',
+        'country' => 'Unknown',
+        'proxy' => 'Unknown',
+        'hosting' => 'Unknown'
+    ];
 }
 
-// ✅ Now that we have accurate values, log them
-log_visit($visitor_ip, $country, $region, $city, $isProxy);
-
-function log_visit($ip, $country, $region, $city, $proxy) {
-    $log_entry = date("F j, Y, g:i a") . " | $ip | $proxy | $country | $region | $city\n";
-    file_put_contents(__DIR__ . "/Logging-Dashboard/Download-Logs/ip-log.txt", $log_entry, FILE_APPEND);
-}
 
 
 $countryNames = [
