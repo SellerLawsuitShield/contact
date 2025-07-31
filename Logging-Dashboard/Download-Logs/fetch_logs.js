@@ -33,7 +33,7 @@ function fetchLogs(startDate, endDate, callback) {
     attachCountryClickEvents();
     console.log("🔄 Country click events reattached!");
 } else {
-                tableBody.innerHTML = "<tr><td colspan='7'>No log data available.</td></tr>";
+                tableBody.innerHTML = "<tr><td colspan='8'>No log data available.</td></tr>";
             }
 
             // ✅ Update the counters
@@ -119,7 +119,7 @@ function fetchBlockedUsers(startDate, endDate) {
             if (data.logs) {
                 tableBody.innerHTML = data.logs;
             } else {
-               tableBody.innerHTML = "<tr><td colspan='7'>No log data available.</td></tr>";
+               tableBody.innerHTML = "<tr><td colspan='8'>No log data available.</td></tr>";
             }
 
             // ✅ Update the counters

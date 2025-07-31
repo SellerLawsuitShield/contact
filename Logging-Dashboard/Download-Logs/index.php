@@ -80,10 +80,11 @@
                 <th>Date</th>
                 <th>IP Address</th>
                 <th>IP Type</th>
-                <th>Hosting</th>
+                <th>Download</th>
                 <th>City</th>
                 <th>Region</th>
                 <th>Country</th>
+                <th>Referrer</th>
             </tr>
         </thead>
         <tbody>
@@ -95,12 +96,10 @@ $uniqueIps = [];
 if (file_exists($logFile)) {
     $lines = file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lines as $line) {
-        $columns = explode(" | ", $line);
+        // Safely pad to 8 columns even if old logs are shorter
+    $columns = array_pad(explode(" | ", $line), 8, 'Unknown');
 
-        // ✅ Skip lines with fewer than 7 columns
-        if (count($columns) < 7) continue;
-
-        list($date, $ip, $ipType, $hosting, $city, $region, $country) = array_map('trim', $columns);
+        list($date, $ip, $ipType, $download, $city, $region, $country, $referrer) = array_map('trim', $columns);
 
         echo "<tr>";
 echo "<td>" . htmlspecialchars($columns[0] ?? '') . "</td>"; // Date
@@ -116,6 +115,7 @@ echo "<td>" . htmlspecialchars($columns[5] ?? '') . "</td>"; // Region
         } else {
             echo "<td>" . htmlspecialchars($country) . "</td>";
         }
+echo "<td>" . htmlspecialchars($columns[7] ?? '') . "</td>"; // Referrer
         echo "</tr>";
 
         $totalEntries++;
@@ -126,10 +126,10 @@ echo "<td>" . htmlspecialchars($columns[5] ?? '') . "</td>"; // Region
 
     // ✅ If no valid rows were added
     if ($totalEntries === 0) {
-        echo "<tr><td colspan='7'>No log data available.</td></tr>";
+        echo "<tr><td colspan='8'>No log data available.</td></tr>";
     }
 } else {
-    echo "<tr><td colspan='7'>No log data available.</td></tr>";
+    echo "<tr><td colspan='8'>No log data available.</td></tr>";
 }
 ?>
 </tbody>
