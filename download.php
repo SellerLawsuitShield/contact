@@ -1,4 +1,7 @@
 <?php
+session_start();
+$_SESSION['download'] = 'Political';
+$referrer = $_SESSION['referrer'] ?? 'Unknown';
 include 'download-counter.php';
 logDownloadIfNewIP();  // Log visitor safely
 

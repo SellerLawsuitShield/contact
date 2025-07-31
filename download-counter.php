@@ -8,17 +8,19 @@ function logDownloadIfNewIP() {
     $country = $_SESSION['countryFullName'] ?? null;
     $ipType = $_SESSION['proxy'] ?? null;
     $hosting = $_SESSION['hosting'] ?? null;
+    $download = $_SESSION['download'] ?? null;
 
     // Fallback lookup if session data missing
     if (!$city || !$region || !$country || !$ipType || $hosting === null) {
-        $response = @file_get_contents("http://pro.ip-api.com/json/{$ip}?fields=city,regionName,country,proxy,hosting,status&key=RNraGZ4ub9516zy");
+         // use https for consistency and check for presence of the hosting field
+        $response = @file_get_contents("https://pro.ip-api.com/json/{$ip}?fields=city,regionName,country,proxy,hosting,status&key=RNraGZ4ub9516zy");
         $data = $response ? json_decode($response, true) : null;
         if ($data && ($data['status'] ?? null) === 'success') {
             $city = $city ?? ($data['city'] ?? 'Unknown');
             $region = $region ?? ($data['regionName'] ?? 'Unknown');
             $country = $country ?? ($data['country'] ?? 'Unknown');
             $ipType = $ipType ?? ($data['proxy'] ? 'Proxy/VPN' : 'Normal');
-            $hosting = $hosting ?? (isset($data['hosting']) ? ($data['hosting'] ? 'true' : 'false') : 'Unknown');
+            $hosting = $hosting ?? (array_key_exists('hosting', $data) ? ($data['hosting'] ? 'true' : 'false') : 'Unknown');
         }
     }
 
@@ -44,7 +46,7 @@ function logDownloadIfNewIP() {
     }
 
     // Log the new IP
-    $logEntry = "$formattedDate | $ip | $ipType | $hosting | $city | $region | $country" . PHP_EOL;
+    $logEntry = "$formattedDate | $ip | $ipType | $download | $city | $region | $country | $referrer" . PHP_EOL;
     file_put_contents($logFile, $logEntry, FILE_APPEND);
 }
 

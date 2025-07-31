@@ -1,3 +1,6 @@
+<?php session_start();
+$_SESSION['referrer'] = $_SESSION['referrer'] ?? ($_SERVER['HTTP_REFERER'] ?? 'Direct Visit');
+?>
 <?php include 'blocked-countries-ips.php'; ?>
 <?php include 'bot-tracker.php'; ?>
 <!DOCTYPE html>

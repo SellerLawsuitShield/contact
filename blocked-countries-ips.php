@@ -26,7 +26,8 @@ function getGeoInfo($ip) {
             $region = !empty($geo['regionName']) ? $geo['regionName'] : 'Unknown';
             $country = !empty($geo['country']) ? $geo['country'] : 'Unknown';
             $proxyType = !empty($geo['proxy']) ? 'Proxy/VPN/Tor' : 'Normal';
-            $hosting = isset($geo['hosting']) ? ($geo['hosting'] ? 'true' : 'false') : 'Unknown';
+              // "hosting" may legitimately be boolean false, so check with array_key_exists
+            $hosting = array_key_exists('hosting', $geo) ? ($geo['hosting'] ? 'true' : 'false') : 'Unknown';
 
             return [
                 'city' => $city,

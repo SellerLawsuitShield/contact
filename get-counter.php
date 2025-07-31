@@ -5,7 +5,7 @@ $logFile = 'download-counter.txt';
 $realCount = file_exists($logFile) ? count(file($logFile)) : 0;
 
 // Manual adjustment: change this number to inflate or deflate total downloads
-$manualOffset = 107;  // Set to 0 if you don't want any manual boost
+$manualOffset = 0;  // Set to 0 if you don't want any manual boost
 
 // Final counter result
 $totalCount = $realCount + $manualOffset;
