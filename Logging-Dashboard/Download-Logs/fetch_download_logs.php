@@ -9,8 +9,10 @@ $uniqueIps = [];
 
 if (file_exists($logFile)) {
     $lines = file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        [$date, $ip, $ipType, $hosting, $city, $region, $country] = array_pad(explode(" | ", $line), 7, 'Unknown');
+     foreach ($lines as $line) {
+        // Safely pad to 8 columns in case some logs are missing the referrer
+        [$date, $ip, $ipType, $hosting, $city, $region, $country, $referrer] =
+            array_pad(explode(" | ", $line), 8, 'Unknown');
 
         // Filter by date range
         $logDate = date('Y-m-d', strtotime($date));
@@ -34,6 +36,9 @@ if (file_exists($logFile)) {
             $logsHtml .= htmlspecialchars($country);
         }
         $logsHtml .= "</td>";
+
+        // Referrer column
+        $logsHtml .= "<td>" . htmlspecialchars($referrer) . "</td>";
 
         $logsHtml .= "</tr>";
 
